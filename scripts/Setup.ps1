@@ -62,8 +62,8 @@ function Setup {
     )
 
     $santaWeb = New-AzADApplication -DisplayName 'SantaWeb' -IdentifierUri 'api://santaweb' -Api $api -AppRole $appRoles
+    $santaLite = New-AzADApplication -DisplayName 'SantaLite' -SPARedirectUri 'https://santalite.localtest.me/signin-oidc'
 
-    $santaLite = New-AzADApplication -DisplayName 'SantaLite'  -SPARedirectUri 'https://santalite.localtest.me/signin-oidc'
     $santaLiteServicePrincipal = New-AzADServicePrincipal -ApplicationId $santaLite.AppId
 
     $params = @{
