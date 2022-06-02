@@ -1,0 +1,7 @@
+param santaWebApplicationId string
+param santaLiteApplicationId string
+param santaLiteServicePrincipalId string
+
+output santaWebApplicationId string = santaWebApplicationId
+output santaLiteApplicationId string = santaLiteApplicationId
+output santaLiteServicePrincipalId string = santaLiteServicePrincipalId
