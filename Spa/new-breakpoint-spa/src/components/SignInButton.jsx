@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 
 const loginRequest = {
   scopes: ["User.Read"],
+  prompt : 'login'
 };
 
 function handleLogin(instance) {
