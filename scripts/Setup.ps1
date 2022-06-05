@@ -65,11 +65,13 @@ function Setup {
     $santaLite = New-AzADApplication -DisplayName 'SantaLite' -SPARedirectUri 'https://santalite.localtest.me/signin-oidc'
 
     $santaLiteServicePrincipal = New-AzADServicePrincipal -ApplicationId $santaLite.AppId
+    $santaWebServicePrincipal = New-AzADServicePrincipal -ApplicationId $santaWeb.AppId
 
     $params = @{
         santaWebApplicationId       = $santaWeb.AppId
         santaLiteApplicationId      = $santaLite.AppId
         santaLiteServicePrincipalId = $santaLiteServicePrincipal.Id
+        santaWebServicePrincipal = $santaWebServicePrincipal.Id
     }
 
     $bicepFile = "$PSScriptRoot\store-ids.bicep"

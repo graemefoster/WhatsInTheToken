@@ -18,7 +18,7 @@ export const NaughtyNiceListButton = () => {
     msalInstance
       .acquireTokenPopup({
         account: account,
-        scopes: ["api://santaweb/Presents.NaughtyNiceList"],
+        scopes: ["api://santaweb/NaughtyNiceList.Write"],
         prompt: "consent",
         extraScopesToConsent: [],
       })
