@@ -69,9 +69,9 @@ function Setup {
 
     $params = @{
         santaWebApplicationId       = $santaWeb.AppId
+        santaWebServicePrincipalId = $santaWebServicePrincipal.Id
         santaLiteApplicationId      = $santaLite.AppId
         santaLiteServicePrincipalId = $santaLiteServicePrincipal.Id
-        santaWebServicePrincipal = $santaWebServicePrincipal.Id
     }
 
     $bicepFile = "$PSScriptRoot\store-ids.bicep"
@@ -85,6 +85,9 @@ function Setup {
     $apiConfig = (Get-Content -Path "$PSScriptRoot\appsettings.template.json")
     $apiConfig = $apiConfig.Replace('<clientid>', $santaWeb.AppId).Replace('<tenantid>', $TenantId)
     $apiConfig | Set-Content -Path "$PSScriptRoot\..\Api\SantaWeb\appsettings.json"
+
+    $controlllerClass = (Get-Content -Path "$PSScriptRoot\NewNaughtyNiceListController.cs")
+    $controlllerClass | Set-Content -Path "$PSScriptRoot\..\Api\SantaWeb\Features\NaughtyNiceList\NewNaughtyNiceListController.cs"
 
 }
 

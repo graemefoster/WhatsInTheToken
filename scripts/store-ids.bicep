@@ -1,7 +1,9 @@
 param santaWebApplicationId string
+param santaWebServicePrincipalId string
 param santaLiteApplicationId string
 param santaLiteServicePrincipalId string
 
 output santaWebApplicationId string = santaWebApplicationId
+output santaWebServicePrincipalId string = santaWebServicePrincipalId
 output santaLiteApplicationId string = santaLiteApplicationId
 output santaLiteServicePrincipalId string = santaLiteServicePrincipalId
