@@ -2,9 +2,8 @@ import { PublicClientApplication } from "@azure/msal-browser";
 
 export const msalConfig = {
   auth: {
-    clientId: "<clientid>",
     authority: "https://login.microsoftonline.com/<tenantid>",
-    redirectUri: "https://santalite.localtest.me/",
+    clientId: "<clientid>"
   },
 
   cache: {

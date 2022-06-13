@@ -39,6 +39,24 @@ function Setup {
                 Type                    = 'User'
                 Value                   = 'NaughtyNiceList.Write'
             }
+            @{
+                Id                      = [Guid]::NewGuid()
+                AdminConsentDisplayName = 'Read the Naughty / Nice list'
+                AdminConsentDescription = 'Read the Naughty / Nice list'
+                UserConsentDisplayName  = 'Read the Naughty / Nice list'
+                UserConsentDescription  = 'Read the Naughty / Nice list'
+                Type                    = 'User'
+                Value                   = 'NaughtyNiceList.Read'
+            }
+            @{
+                Id                      = [Guid]::NewGuid()
+                AdminConsentDisplayName = 'Organise present delivery'
+                AdminConsentDescription = 'Organise present delivery'
+                UserConsentDisplayName  = 'Organise present delivery'
+                UserConsentDescription  = 'Organise present delivery'
+                Type                    = 'User'
+                Value                   = 'PresentDeliveryRoute.Write'
+            }
         )
     }
 
