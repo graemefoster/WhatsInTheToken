@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Alert  } from "react-bootstrap";
+import { Button, Alert } from "react-bootstrap";
 import { msalInstance } from "../msalConfig";
 
 /**
@@ -8,6 +8,7 @@ import { msalInstance } from "../msalConfig";
 export const NaughtyNiceListButton = () => {
   const [error, setError] = useState();
   const [response, setResponse] = useState();
+  const [token, setToken] = useState();
 
   function addToNaughtyNiceList() {
     setResponse(null);
@@ -26,6 +27,7 @@ export const NaughtyNiceListButton = () => {
         if (r.errorDesc) {
           setError(r.errorDesc);
         } else {
+          setToken(r.accessToken);
           return r.accessToken;
         }
       })
@@ -35,9 +37,9 @@ export const NaughtyNiceListButton = () => {
           mode: "cors",
           headers: {
             Authorization: `Bearer ${r}`,
-            'Content-Type': 'application/json'
+            "Content-Type": "application/json",
           },
-          body: JSON.stringify({name: 'Graeme', status: 0})
+          body: JSON.stringify({ name: "Graeme", status: 0 }),
         })
       )
       .then((response) => {
@@ -56,13 +58,16 @@ export const NaughtyNiceListButton = () => {
     <>
       {error ? <Alert variant="danger">{error}</Alert> : ""}
       {response ? <Alert variant="success">{response}</Alert> : ""}
-      <Button
-        variant="secondary"
-        className="ml-auto"
-        onClick={() => addToNaughtyNiceList()}
-      >
-        Add Graeme to naughty / nice list
-      </Button>
+      <p>
+        <Button
+          variant="secondary"
+          className="ml-auto"
+          onClick={() => addToNaughtyNiceList()}
+        >
+          Add Graeme to naughty / nice list
+        </Button>
+      </p>
+      <textarea rows={20} cols={100} value={token} />
     </>
   );
 };

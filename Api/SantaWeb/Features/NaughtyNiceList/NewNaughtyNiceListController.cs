@@ -18,6 +18,7 @@ namespace SantaWeb.Features.NaughtyNiceList
 
         [HttpPost]
         [RequiredScope(new [] {"NaughtyNiceList.Write"})]
+        [Authorize(Roles = "SeniorContributor")]
         public IActionResult Post(NewNaughtyNice item)
         {
             _logger.LogInformation("Adding new naughty-nice item");
