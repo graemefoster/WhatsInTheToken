@@ -98,7 +98,7 @@ function Setup {
 
     $spaConfig = (Get-Content -Path "$PSScriptRoot\msalConfig.template.js")
     $spaConfig = $spaConfig.Replace('<clientid>', $santaLite.AppId).Replace('<tenantid>', $TenantId)
-    $spaConfig | Set-Content -Path "$PSScriptRoot\..\Spa\new-breakpoint-spa\src\msalConfig.js"
+    $spaConfig | Set-Content -Path "$PSScriptRoot\..\Spa\SantaLite\src\msalConfig.ts"
 
     $apiConfig = (Get-Content -Path "$PSScriptRoot\appsettings.template.json")
     $apiConfig = $apiConfig.Replace('<clientid>', $santaWeb.AppId).Replace('<tenantid>', $TenantId)

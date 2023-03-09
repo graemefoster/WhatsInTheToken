@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Alert } from "react-bootstrap";
+import { Button, Alert, Toast } from "react-bootstrap";
 import { msalInstance } from "../msalConfig";
 
 /**
@@ -42,21 +42,27 @@ export const NaughtyNiceListButton = () => {
         if (response.ok) {
           setResponse("Added Graeme to naughty / nice list");
         } else {
-          setError(response.statusText);
+          if (response.headers.has("www-authenticate")) {
+            //Cross domain (CORS) and you won't see this:
+            //https://stackoverflow.com/questions/43344819/reading-response-headers-with-fetch-api
+            setError(`An error occurred: ${response.headers.get("www-authenticate")}`);
+          } else {
+            setError(`An error occurred. Code: ${response.status}. ${response.statusText}`);
+          }
         }
       })
-      .catch((error: any) => { 
+      .catch((error: any) => {
         setError(error.message);
       });
   }
 
   return (
     <>
-      {error ? <Alert variant="danger">{error}</Alert> : ""}
-      {response ? <Alert variant="success">{response}</Alert> : ""}
+      {error !== undefined ? <Alert variant="danger">{error}</Alert> : ""}
+      {response !== undefined ? <Alert variant="success">{response}</Alert> : ""}
       <p>
         <Button
-          variant="secondary"
+          variant="primary"
           className="ml-auto"
           onClick={() => addToNaughtyNiceList()}
         >

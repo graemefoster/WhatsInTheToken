@@ -40,7 +40,7 @@ export const PageLayout = () => {
     <>
       <Navbar variant="dark" bg="danger">
         <Container>
-          <Navbar.Brand href="#">SantaLite v1.0</Navbar.Brand>
+          <Navbar.Brand href="#">SantaLite</Navbar.Brand>
           {isAuthenticated ? <SignOutButton /> : <></>}
         </Container>
       </Navbar>
