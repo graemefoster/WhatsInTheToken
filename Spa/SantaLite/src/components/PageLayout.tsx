@@ -1,10 +1,9 @@
-import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import { useIsAuthenticated, useMsal } from "@azure/msal-react";
 import { SignInButton } from "./SignInButton";
 import { NaughtyNiceListButton } from "./NaughtyNiceListButton";
 import christmasTree from "./christmas-tree.png";
-import { Container, Row, Col, ListGroup, NavItem } from "react-bootstrap";
+import { Container, Row, Col, ListGroup } from "react-bootstrap";
 import { SignOutButton } from "./SignOutButton";
 
 /**
