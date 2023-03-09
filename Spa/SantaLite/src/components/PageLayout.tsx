@@ -4,13 +4,13 @@ import { useIsAuthenticated, useMsal } from "@azure/msal-react";
 import { SignInButton } from "./SignInButton";
 import { NaughtyNiceListButton } from "./NaughtyNiceListButton";
 import christmasTree from "./christmas-tree.png";
-import { Container, Row, Col, ListGroup } from "react-bootstrap";
+import { Container, Row, Col, ListGroup, NavItem } from "react-bootstrap";
 import { SignOutButton } from "./SignOutButton";
 
 /**
  * Renders the navbar component with a sign-in button if a user is not authenticated
  */
-export const PageLayout = (props) => {
+export const PageLayout = () => {
   const isAuthenticated = useIsAuthenticated();
   const { accounts } = useMsal();
 
@@ -39,10 +39,10 @@ export const PageLayout = (props) => {
   return (
     <>
       <Navbar variant="dark" bg="danger">
-        <a className="navbar-brand" href="/">
-          SantaLite v1.0
-        </a>
-        {isAuthenticated ? <SignOutButton /> : <></>}
+        <Container>
+          <Navbar.Brand href="#">SantaLite v1.0</Navbar.Brand>
+          {isAuthenticated ? <SignOutButton /> : <></>}
+        </Container>
       </Navbar>
       <Container fluid={"lg"}>
         <Row>

@@ -6,13 +6,13 @@ import { msalInstance } from "../msalConfig";
  * Renders a button which, when selected, will open a popup for login
  */
 export const NaughtyNiceListButton = () => {
-  const [error, setError] = useState();
-  const [response, setResponse] = useState();
-  const [token, setToken] = useState();
+  const [error, setError] = useState<string | undefined>();
+  const [response, setResponse] = useState<string | undefined>();
+  const [token, setToken] = useState<string | undefined>();
 
   function addToNaughtyNiceList() {
-    setResponse(null);
-    setError(null);
+    setResponse(undefined);
+    setError(undefined);
     console.log("Requesting token");
     const account = msalInstance.getAllAccounts()[0];
 
@@ -24,12 +24,8 @@ export const NaughtyNiceListButton = () => {
         extraScopesToConsent: [],
       })
       .then((r) => {
-        if (r.errorDesc) {
-          setError(r.errorDesc);
-        } else {
-          setToken(r.accessToken);
-          return r.accessToken;
-        }
+        setToken(r.accessToken);
+        return r.accessToken;
       })
       .then((r) =>
         fetch("https://localhost:4431/NewNaughtyNiceList/", {
@@ -49,7 +45,7 @@ export const NaughtyNiceListButton = () => {
           setError(response.statusText);
         }
       })
-      .catch((error) => {
+      .catch((error: any) => { 
         setError(error.message);
       });
   }
