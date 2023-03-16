@@ -65,7 +65,7 @@ function Setup {
             AllowedMemberType = @( 'User' )
             Id                = [Guid]::NewGuid()
             IsEnabled         = $true
-            Value             = 'SeniorContributor'
+            Value             = 'SeniorEmployee'
             DisplayName       = 'SantaWorld Senior Employee'
             Description       = 'Allowed to update important present delivery information'
         }
@@ -74,7 +74,7 @@ function Setup {
             Id                = [Guid]::NewGuid()
             IsEnabled         = $true
             DisplayName       = 'SantaWorld Employee'
-            Value             = 'Reader'
+            Value             = 'Employee'
             Description       = 'Allowed to look at present delivery information'
         }
     )
