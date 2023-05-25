@@ -34,9 +34,9 @@ dotnet run --launch-profile SantaWeb
 ```
 
 ### SantaLite
-A react application (Spa/new-breakpoint-spa/) listens on https://santalite.localtest.me
+A react application (Spa/SantaLite/) listens on https://santalite.localtest.me
 ```
-cd .Spa/new-breakpoint-spa/
+cd .Spa/SantaLite/
 npm run start
 ```
 
