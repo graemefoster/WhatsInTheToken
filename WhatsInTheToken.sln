@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{DBA48179-DCEF-42E1-9FCD-E93BCEE31B73}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SantaWeb", "Api\SantaWeb\SantaWeb.csproj", "{BE35D6FB-F6BA-43B2-80A7-DAE53A5DF9E7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{9AC0AE24-9E06-4340-937B-B429BE80562A}"
+	ProjectSection(SolutionItems) = preProject
+		scripts\Setup.ps1 = scripts\Setup.ps1
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE35D6FB-F6BA-43B2-80A7-DAE53A5DF9E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE35D6FB-F6BA-43B2-80A7-DAE53A5DF9E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE35D6FB-F6BA-43B2-80A7-DAE53A5DF9E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE35D6FB-F6BA-43B2-80A7-DAE53A5DF9E7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BE35D6FB-F6BA-43B2-80A7-DAE53A5DF9E7} = {DBA48179-DCEF-42E1-9FCD-E93BCEE31B73}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {96B44692-FBDB-42C0-A02A-E3BD07004DCD}
+	EndGlobalSection
+EndGlobal
